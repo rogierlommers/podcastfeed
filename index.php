@@ -18,7 +18,7 @@ header('Content-type: text/xml');
 $output  = '<rss xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:wfw="http://wellformedweb.org/CommentAPI/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" xmlns:slash="http://purl.org/rss/1.0/modules/slash/" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:rawvoice="http://www.rawvoice.com/rawvoiceRssModule/" version="2.0">';
 $output .= '<channel>';
 $output .= '<title>Podcast dump</title>';
-$output .= '<description>Podcast directory containing various episodes</description>';
+$output .= '<description>Podcast feed from occasionally downloaded files.</description>';
 $output .= '<link>' . $location . '</link>';
 $output .= '<itunes:image href="' . $location . 'podcasts.jpg"/>';
 
