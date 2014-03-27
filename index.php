@@ -5,7 +5,8 @@ $skippedFiles = array( "."
 					 , "index.php"
 					 , "podcasts.jpg"
 					 , "license"
-					 , "readme.md");
+					 , "readme.md"
+					 , ".gitignore");
 
 // LOCATION OF SCRIPT
 $location = "http://" . $_SERVER['HTTP_HOST'] . $_SERVER['PHP_SELF'];
