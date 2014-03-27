@@ -9,7 +9,7 @@ $skippedFiles = array( "."
 					 , ".gitignore");
 
 // LOCATION OF SCRIPT
-$location = "http://" . $_SERVER['HTTP_HOST'] . $_SERVER['PHP_SELF'];
+$baseUrl = "http://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
 
 //SET XML HEADER
 header('Content-type: text/xml');
@@ -19,8 +19,8 @@ $output  = '<rss xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:
 $output .= '<channel>';
 $output .= '<title>Podcast dump</title>';
 $output .= '<description>Podcast feed from occasionally downloaded files.</description>';
-$output .= '<link>' . $location . '</link>';
-$output .= '<itunes:image href="' . $location . 'podcasts.jpg"/>';
+$output .= '<link>' . $baseUrl . '</link>';
+$output .= '<itunes:image href="' . $baseUrl . 'podcasts.jpg"/>';
 
 // LOOP THROUGH FILES
 if ($handle = opendir('./')) {
@@ -29,7 +29,7 @@ if ($handle = opendir('./')) {
 		continue;
 	}
 
-    $link    = $location . "/" . $entry;
+    $link    = $baseUrl . $entry;
     $size    = filesize("./" . $entry);
     $pubdate = filemtime("./" . $entry);
     $output .= '<item>';
